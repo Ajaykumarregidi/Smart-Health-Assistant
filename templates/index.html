@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Prediction System</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            background: url('https://www.pixelstalk.net/wp-content/uploads/2016/10/Free-Doctor-Backgrounds-HD.jpg');
+            background-size: cover;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2575fc;
+        }
+        .navbar .menu a {
+            color: #333;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .navbar .menu a:hover {
+            color: #2575fc;
+        }
+        .content {
+            display: none;
+            padding: 30px;
+            text-align: center;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .active {
+            display: block;
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            background: #2575fc;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #1a5bbf;
+            transform: translateY(-2px);
+        }
+        h1 {
+            color: #2575fc;
+        }
+        p {
+            color: #555;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: auto;
+        }
+        .footer .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #2575fc;
+        }
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Health Prediction System</div>
+        <div class="menu">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('about')">About</a>
+            <a href="#" onclick="showPage('services')">Services</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+    </div>
+
+    <div id="home" class="content active">
+        <h1>WELCOME TO THE SMART HEALTH ASSISTANT</h1>
+        <p>Select a disease prediction model to proceed.</p>
+        <button class="btn" onclick="location.href='/predict/diabetes'">Diabetes</button>
+        <button class="btn" onclick="location.href='/predict/heart'">Heart</button>
+        <button class="btn" onclick="location.href='/predict/kidney'">Kidney</button>
+        <button class="btn" onclick="location.href='/predict/parkinsons'">Parkinson's</button>
+        <button class="btn" onclick="location.href='/predict/eye'">Eye</button>
+    </div>
+
+    <div id="about" class="content">
+        <h1>About the System</h1>
+        <p>Our AI-powered health prediction system is designed to assist users in identifying potential health risks early through intelligent analysis of medical data. The system integrates multiple machine learning models, each specialized in predicting a specific disease with high precision.</p>
+    
+        <p>The platform works by taking user input in the form of clinical parameters such as blood pressure, glucose levels, heart rate, medical history, and more. These inputs are then analyzed by our trained models to assess the risk of conditions like Diabetes, Heart Disease, Kidney Disease, Parkinson’s, and Eye Diseases.</p>
+    
+        <p>Key features of the system include:</p>
+        <ul>
+            <li><strong>High Accuracy:</strong> Trained on large and diverse datasets to ensure dependable predictions.</li>
+            <li><strong>User-Friendly Interface:</strong> Simple and interactive UI that allows users to input data and get results quickly.</li>
+            <li><strong>Fast Results:</strong> Instant health risk assessment based on real-time data input.</li>
+            <li><strong>Secure & Private:</strong> User data is handled with strict privacy and security protocols.</li>
+            <li><strong>Multi-Disease Support:</strong> One-stop solution for predicting multiple diseases in a single platform.</li>
+        </ul>
+    
+        <p>Our mission is to empower individuals with tools that can guide early diagnosis and encourage proactive healthcare decisions. This system is ideal for both personal use and clinical support, helping bridge the gap between patients and timely medical care.</p>
+    </div>
+    
+
+    <div id="services" class="content">
+        <h1>Our Services</h1>
+        <p>We provide AI-powered disease prediction services using state-of-the-art machine learning models. Our tools are trained on large-scale medical datasets to ensure high accuracy and early detection. Below are the diseases we currently support:</p>
+    
+        <h2>1. Diabetes Prediction</h2>
+        <p>Our system analyzes key health indicators like glucose level, BMI, insulin levels, age, and family history to predict the risk of diabetes. This helps users monitor their condition and take preventive actions early.</p>
+    
+        <h2>2. Heart Disease Prediction</h2>
+        <p>Using features such as chest pain type, cholesterol levels, resting blood pressure, maximum heart rate, and ECG results, our model can detect the probability of heart disease, assisting in timely medical intervention.</p>
+    
+        <h2>3. Kidney Disease Prediction</h2>
+        <p>Our model detects Chronic Kidney Disease (CKD) by analyzing symptoms like blood urea, serum creatinine, hemoglobin levels, blood pressure, and urine output. Early detection helps avoid long-term complications.</p>
+    
+        <h2>4. Parkinson’s Disease Detection</h2>
+        <p>We use voice measurements like jitter, shimmer, and harmonic ratio to predict Parkinson’s disease, enabling early diagnosis. This non-invasive method is especially useful for people showing initial symptoms like speech changes.</p>
+    
+        <h2>5. Eye Disease (Retinopathy) Detection</h2>
+        <p>Our AI model processes retinal images and analyzes patterns related to Diabetic Retinopathy and other eye diseases. By detecting abnormalities early, it helps prevent vision loss through timely medical care.</p>
+    
+        <p>All our services are designed to be user-friendly and privacy-focused, offering health insights that support better decision-making and healthier living.</p>
+    </div>
+    
+
+    <div id="contact" class="content">
+        <h1>Contact Us</h1>
+        <p>Email: ajaykumar@gmail.com</p>
+        <p>Phone: +91 9014927699</p>
+        <p>Address: 123 Health Lane, Wellness City, India</p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2023 Health Prediction System. All rights reserved.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            let pages = document.querySelectorAll('.content');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
